@@ -1,1 +1,3 @@
-basic_mmap
+memkind
+numa
+*.o
