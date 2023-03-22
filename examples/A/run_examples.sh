@@ -10,7 +10,3 @@ echo "-------------------------------------"
 echo "Run numa example with --membind=2"
 numactl --membind=2 ./numa
 echo "-------------------------------------"
-
-echo "Run memkind example"
-./memkind
-echo "-------------------------------------"

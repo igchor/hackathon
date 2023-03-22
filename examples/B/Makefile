@@ -1,19 +1,19 @@
 #
-# Makefile for numa example
+# Makefile for memkind example
 #
-PROGS = numa
+PROGS = memkind
 CFLAGS = -g -Wall -Werror -std=gnu99
 LIBS = -lnuma
 
 all: $(PROGS)
 
-numa: numa.o
-	$(CC) -o $@ $(CFLAGS) $^ $(LIBS)
+memkind: memkind.o
+	$(CC) -o $@ $(CFLAGS) $^ $(LIBS) -lmemkind
 
 clean:
 	$(RM) *.o a.out
 
 clobber: clean
-	$(RM) $(PROGS) numa
+	$(RM) $(PROGS) memkind
 
 .PHONY: all clean clobber
