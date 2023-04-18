@@ -16,11 +16,18 @@ The PDF files at the top level contain slides:
 	libpmemobj.pdf     -- overview of libpmemobj (C API)
 	libpmemobj-cpp.pdf -- overview of libpmemobj (C++ API)
 
-The examples are in examples/A, exmamples/B, etc.  Each example is meant
+The examples are in examples subdirectories.  Each example is meant
 to show a persistent memory programming concept, like transactions,
-support for a specific language, and API, etc.	The idea is to use
-the first few examples (A through C) to gain some essential background
-knowledge, then pick examples that are interesting to you.  Use them as a
+support for a specific language, and API, etc.
+
+First 3 examples show volatile usage of PMEM. Those examples are also
+relevant for CXL memory.
+
+The next 3 few examples (04 through 06) provide some essential background
+knowledge.
+
+Next examples, go into more details and present different libraries.
+Pick examples that are interesting to you.  Use them as a
 starting point, or a reference as you develop your own persistent memory
 aware programs.  There's a README.txt file in each example directory
 that explains what the example is all about.
