@@ -1,19 +1,19 @@
 #
-# Makefile for numa example
+# Makefile for lowlevel example
 #
-PROGS = numa
+PROGS = lowlevel
 CFLAGS = -g -Wall -Werror -std=gnu99
-LIBS = -lnuma
+LIBS = -lpmem2
 
 all: $(PROGS)
 
-numa: numa.o
+lowlevel: lowlevel.o
 	$(CC) -o $@ $(CFLAGS) $^ $(LIBS)
 
 clean:
-	$(RM) *.o a.out
+	$(RM) *.o a.out core
 
 clobber: clean
-	$(RM) $(PROGS) numa
+	$(RM) $(PROGS) lowlevel
 
 .PHONY: all clean clobber

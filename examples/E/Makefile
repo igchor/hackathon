@@ -1,24 +1,19 @@
 #
-# Makefile for word frequency count example in C++
+# Makefile for dram_and_fsdax example
 #
-PROGS = freq_pmem_print freq_pmem_cpp
+PROGS = dram_and_fsdax
 CFLAGS = -g -Wall -Werror -std=gnu99
-CXXFLAGS = -g -Wall -Werror -std=gnu++11
+LIBS = -lumf -lnuma -ltbbmalloc
 
 all: $(PROGS)
 
-freq_pmem_print freq_pmem_cpp: LIBS = -lpmem -lpmemobj -pthread
-
-freq_pmem_print: freq_pmem_print.o
+dram_and_fsdax: dram_and_fsdax.o
 	$(CC) -o $@ $(CFLAGS) $^ $(LIBS)
 
-freq_pmem_cpp: freq_pmem_cpp.o
-	$(CXX) -o $@ $(CFLAGS) $^ $(LIBS)
-
 clean:
-	$(RM) *.o a.out core
+	$(RM) *.o a.out
 
 clobber: clean
-	$(RM) $(PROGS)
+	$(RM) $(PROGS) dram_and_fsdax
 
 .PHONY: all clean clobber

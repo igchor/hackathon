@@ -1,19 +1,19 @@
 #
-# Makefile for lowlevel example
+# Makefile for custom_file_provider example
 #
-PROGS = lowlevel
+PROGS = custom_file_provider
 CFLAGS = -g -Wall -Werror -std=gnu99
-LIBS = -lpmem2
+LIBS = -lumf -lnuma -ltbbmalloc
 
 all: $(PROGS)
 
-lowlevel: lowlevel.o
+custom_file_provider: custom_file_provider.o
 	$(CC) -o $@ $(CFLAGS) $^ $(LIBS)
 
 clean:
-	$(RM) *.o a.out core
+	$(RM) *.o a.out
 
 clobber: clean
-	$(RM) $(PROGS) lowlevel
+	$(RM) $(PROGS) custom_file_provider
 
 .PHONY: all clean clobber
